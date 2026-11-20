@@ -1,0 +1,144 @@
+<title>Sebastián Carrillo Fotografía</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Manrope:wght@400;500;600;700&display=swap">
+<style>
+/* Concepto: galería luminosa en arena y blanco; titular grande, fotos como protagonistas, bloque verde bosque para el equipo. */
+:root{--bg:#F4EEE4;--paper:#FFFFFF;--sand:#E9DFCF;--ink:#26211B;--mute:#6F6558;--line:#DDD2C0;--bronze:#A8733A;--bronze-d:#8A5B28;--forest:#2D3A30;--forest-fg:#F4EEE4;--d:'Bricolage Grotesque',system-ui,sans-serif;--b:'Manrope',system-ui,sans-serif;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.65 var(--b);padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.w{max-width:1240px;margin:0 auto}
+a{color:inherit}
+nav{display:flex;justify-content:space-between;align-items:center;padding:22px 0;gap:16px}
+.logo{text-decoration:none;line-height:1.2}
+.logo b{display:block;font:800 20px var(--d);letter-spacing:-.01em}
+.logo span{font-size:12px;color:var(--mute);letter-spacing:.06em}
+.btn{display:inline-flex;align-items:center;background:var(--ink);color:var(--bg);font:700 15px var(--b);padding:13px 24px;border-radius:999px;text-decoration:none;border:0;cursor:pointer}
+.btn.o{background:none;color:var(--ink);border:1.5px solid var(--ink)}
+.btn.g{background:var(--bronze);color:#fff}
+.btn:focus-visible,.chip:focus-visible,.it:focus-visible{outline:2px solid var(--bronze);outline-offset:3px}
+.eye{color:var(--bronze-d);font-weight:700;font-size:13px;letter-spacing:.16em;text-transform:uppercase}
+.hero{display:grid;grid-template-columns:1.1fr 1fr;gap:48px;align-items:center;padding:36px 0 76px}
+h1{font:800 clamp(40px,6vw,82px)/.98 var(--d);letter-spacing:-.035em;margin:16px 0 22px;text-wrap:balance}
+h1 em{font-style:normal;color:var(--bronze)}
+.lead{color:var(--mute);font-size:18px;max-width:540px;margin:0 0 30px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.mos{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:240px 240px;gap:12px}
+.mos img{width:100%;height:100%;object-fit:cover;border-radius:18px;display:block}
+.mos .a{grid-row:span 2}
+.sec{padding:68px 0;border-top:1px solid var(--line)}
+h2{font:700 clamp(30px,4.2vw,50px)/1.05 var(--d);letter-spacing:-.025em;margin:10px 0 14px;text-wrap:balance}
+.sub{color:var(--mute);max-width:640px;margin:0 0 34px}
+.chips{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:28px}
+.chip{font:600 14px var(--b);color:var(--ink);background:var(--paper);border:1px solid var(--line);padding:9px 16px;border-radius:999px;cursor:pointer}
+.chip small{color:var(--mute);margin-left:6px;font-weight:500}
+.chip[aria-pressed=true]{background:var(--ink);border-color:var(--ink);color:var(--bg)}
+.chip[aria-pressed=true] small{color:#cbbfae}
+.grid{columns:4 260px;column-gap:12px}
+.it{display:block;width:100%;margin:0 0 12px;padding:0;border:0;background:var(--sand);border-radius:14px;overflow:hidden;position:relative;cursor:zoom-in;break-inside:avoid}
+.it img{display:block;width:100%;height:auto;transition:transform .5s}
+.it:hover img{transform:scale(1.04)}
+.it span{position:absolute;left:10px;bottom:10px;background:rgba(255,255,255,.9);color:var(--ink);font-size:12px;font-weight:700;padding:4px 11px;border-radius:999px;opacity:0;transition:opacity .25s}
+.it:hover span,.it:focus-visible span{opacity:1}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:22px;padding:34px;min-width:0}
+.card h3{margin:6px 0 0;font:700 28px var(--d);letter-spacing:-.02em}
+.card p{color:var(--mute);margin:10px 0 0}
+.card ul{list-style:none;padding:0;margin:20px 0 0;display:grid;gap:10px}
+.card li{padding-left:26px;position:relative}
+.card li::before{content:"";position:absolute;left:0;top:.7em;width:12px;height:2px;background:var(--bronze)}
+.card.hl{background:var(--sand);border-color:var(--sand)}
+.kit{background:var(--forest);color:var(--forest-fg);border-radius:30px;padding:clamp(28px,5vw,64px);margin:68px 0}
+.kit h2{margin-top:10px}
+.kit .eye{color:#D9B27C}
+.kit .sub{color:#c3c9bd}
+.kg{display:grid;grid-template-columns:repeat(4,1fr);gap:22px}
+.kg div{border-top:1px solid #54655a;padding-top:16px;min-width:0}
+.kg b{display:block;font:700 20px var(--d);margin-bottom:6px}
+.kg p{margin:0;color:#c3c9bd;font-size:15px}
+.cov{display:flex;gap:10px;flex-wrap:wrap}
+.cov span{background:var(--paper);border:1px solid var(--line);border-radius:999px;padding:10px 18px;font-weight:600}
+.cov .more{background:var(--bronze);border-color:var(--bronze);color:#fff}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin:0;padding:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;border-top:2px solid var(--bronze);padding-top:16px}
+.steps li::before{content:"Paso " counter(s);color:var(--bronze-d);font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+.steps b{display:block;font:700 20px var(--d);margin:4px 0}
+.steps p{margin:0;color:var(--mute);font-size:15px}
+.contact{background:var(--paper);border:1px solid var(--line);border-radius:30px;padding:clamp(28px,5vw,64px);display:grid;grid-template-columns:1.2fr 1fr;gap:32px;align-items:center;margin-bottom:48px}
+.contact h2{margin-top:10px}
+.contact p{margin:0 0 8px;color:var(--mute)}
+.num{font:800 clamp(30px,4vw,46px) var(--d);color:var(--ink);user-select:all;letter-spacing:-.01em}
+footer{color:var(--mute);font-size:14px;padding:0 0 40px;display:flex;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.lb{position:fixed;inset:0;background:rgba(20,16,12,.94);z-index:50;display:flex;align-items:center;justify-content:center;padding:56px 16px 24px}
+.lb[hidden]{display:none}
+.lb img{max-width:100%;max-height:100%;border-radius:8px;display:block}
+.lb button{position:absolute;background:rgba(255,255,255,.14);color:#fff;border:0;width:46px;height:46px;border-radius:50%;font-size:22px;cursor:pointer}
+.lb .x{top:max(12px,env(safe-area-inset-top,0px));right:14px}.lb .p{left:12px;top:50%}.lb .n{right:12px;top:50%}
+.lb .c{position:absolute;bottom:14px;left:0;right:0;text-align:center;color:#cbbfae;font-size:13px}
+@media(max-width:860px){.hero,.two,.contact{grid-template-columns:1fr}.steps,.kg{grid-template-columns:1fr 1fr}.mos{grid-template-rows:190px 190px}.hero{padding-bottom:48px}}
+@media(max-width:480px){.steps,.kg{grid-template-columns:1fr}.grid{columns:2 140px;column-gap:8px}.it{margin-bottom:8px}.card{padding:24px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+.promo{background:var(--bronze);color:#fff;text-align:center;font-weight:700;font-size:14px;padding:9px 16px;margin:0 calc(-1*max(16px,env(safe-area-inset-left,0px)));padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+.promo a{color:#fff;text-underline-offset:3px}
+.off{display:inline-flex;align-items:baseline;gap:10px;background:var(--bronze);color:#fff;border-radius:18px;padding:12px 22px;margin:0 0 18px}
+.off b{font:800 clamp(40px,6vw,60px)/1 var(--d);letter-spacing:-.03em}
+.off span{font-weight:700;font-size:15px;line-height:1.3}
+.tag{display:inline-flex;align-items:center;gap:12px;background:var(--paper);border:1px dashed var(--bronze);border-radius:999px;padding:5px 18px 5px 5px;margin:0 0 22px;font-size:14px;font-weight:600}
+.tag b{background:var(--bronze);color:#fff;border-radius:999px;padding:6px 14px;font:800 14px var(--d);letter-spacing:.04em}
+.lead mark{background:linear-gradient(transparent 55%,#E7C9A0 55%);color:var(--ink);font-weight:700;padding:0 2px}
+.ent{display:flex;align-items:center;gap:10px;font-weight:700;margin:0 0 14px}
+.ent i{width:22px;height:22px;border-radius:50%;background:var(--forest);position:relative;flex:none}
+.ent i::after{content:"";position:absolute;left:7px;top:4px;width:5px;height:10px;border:solid #fff;border-width:0 2px 2px 0;transform:rotate(45deg)}
+</style>
+<div class="promo">25% de descuento en noviembre y diciembre · <a href="#contacto">Cotiza ahora</a></div>
+<div class="w">
+<nav><a class="logo" href="#top"><b>Sebastián Carrillo</b><span>Cada momento merece ser recordado</span></a><a class="btn" href="#contacto">Cotizar</a></nav>
+<header class="hero" id="top">
+<div><div class="eye">Fotografía y video · Lima</div>
+<h1>Servicio profesional de <em>fotografía</em></h1>
+<div class="tag"><b>25% OFF</b><span>Descuento en noviembre y diciembre</span></div>
+<div class="ent"><i></i>Entregamos todas las fotos editadas</div>
+<p class="lead">Fotografía y <mark>filmmaker</mark> para cubrir cualquier evento: empresas, colegios, familias, marcas y artistas. Equipo propio y edición cuidada en cada entrega.</p>
+<div class="cta"><a class="btn" href="#galeria">Ver trabajos</a><a class="btn o" href="#contacto">Quiero cotizar</a></div></div>
+<div class="mos"><img class="a" src="img/f57.jpg" alt="Graduación"><img src="img/f4.jpg" alt="Cumpleaños"><img src="img/f12.jpg" alt="Mesa de postres de baby shower"></div>
+</header>
+<section class="sec" id="galeria"><div class="eye">Portafolio</div><h2>Trabajos reales, por categoría</h2>
+<p class="sub">Elige el tipo de servicio y mira cómo trabajamos. Toca cualquier foto para verla en grande.</p>
+<div class="chips" id="chips"></div><div class="grid" id="grid"></div></section>
+<section class="sec" id="servicios"><div class="eye">Servicios</div><h2>Fotógrafo y filmmaker</h2>
+<p class="sub">Fotografía y grabación en un solo servicio. Cubrimos cualquier evento y trabajamos con total profesionalismo.</p>
+<div class="two">
+<div class="card"><div class="eye">Fotografía</div><h3>Sesiones y cobertura</h3><ul><li>Fotografía corporativa y de equipos</li><li>Colegios, promociones y graduaciones</li><li>Cumpleaños, baby showers y eventos sociales</li><li>Conciertos, ferias y activaciones de marca</li><li>Retratos, parejas, modelaje y mascotas</li><li>Fotografía inmobiliaria y de locales</li></ul></div>
+<div class="card hl"><div class="eye">Filmmaker</div><h3>Servicio de grabación</h3><p>Grabo y edito tu video para que cuentes tu historia en pantalla.</p><ul><li>Cobertura en video de cualquier evento</li><li>Videos institucionales y de marca</li><li>Reels y videos para redes sociales</li><li>Audio profesional con micrófonos inalámbricos</li><li>Edición con subtítulos, motion y música</li></ul></div>
+</div></section>
+<section class="kit"><div class="eye">Equipo y edición</div><h2>Herramientas profesionales en cada trabajo</h2>
+<p class="sub">Llego con todo lo necesario para que la imagen, el audio y la luz estén al nivel de tu evento.</p>
+<div class="kg"><div><b>Cámara Sony A7 III</b><p>Fotografía y video de alta calidad, también en poca luz.</p></div><div><b>Micrófonos Hollyland</b><p>Audio limpio e inalámbrico para entrevistas y discursos.</p></div><div><b>Luces y flash</b><p>Iluminación propia para interiores, noche y retratos.</p></div><div><b>Edición profesional</b><p>Entregamos todas las fotos editadas, con retoque de color, y videos listos.</p></div></div></section>
+<section class="sec" style="border-top:0;padding-top:0"><div class="eye">Cobertura</div><h2>Cubrimos cualquier evento</h2>
+<p class="sub">Somos profesionales y nos adaptamos a lo que necesites, sea grande o pequeño.</p>
+<div class="cov"><span>Corporativos</span><span>Colegios</span><span>Promociones</span><span>Cumpleaños</span><span>Baby showers</span><span>Ferias</span><span>Conciertos</span><span>Sesiones</span><span class="more">Y mucho más</span></div></section>
+<section class="sec"><div class="eye">Cómo trabajamos</div><h2>Del primer mensaje a la entrega</h2><br>
+<ol class="steps"><li><b>Conversamos</b><p>Entendemos qué necesitas y para qué vas a usar el material.</p></li><li><b>Planificamos</b><p>Definimos horarios, locación, ideas y entregables.</p></li><li><b>Fotografiamos y grabamos</b><p>Cobertura profesional con equipo y luz propios.</p></li><li><b>Editamos y entregamos</b><p>Retoque y edición en los formatos que necesitas.</p></li></ol></section>
+<section class="sec" id="contacto" style="border:0"><div class="contact"><div><div class="off"><b>25%</b><span>de descuento<br>en noviembre y diciembre</span></div><div class="eye">Contacto</div><h2>Cuéntame tu evento o proyecto</h2><p>Escríbeme para cotizar y te envío una propuesta a tu medida con el descuento incluido.</p><p style="margin-top:16px"><a class="btn g" href="https://wa.me/51997086653?text=Hola%20Sebasti%C3%A1n%2C%20quiero%20cotizar%20con%20el%2025%25%20de%20descuento" target="_blank" rel="noopener">Cotizar por WhatsApp</a></p></div>
+<div><p>Llama o escribe al</p><div class="num">+51 997 086 653</div><p style="margin-top:10px">Sebastián Carrillo · Lima, Perú</p></div></div>
+<footer><span>© Sebastián Carrillo</span><span>Fotografía y filmmaker</span></footer></section>
+</div>
+<div class="lb" id="lb" hidden role="dialog" aria-label="Foto ampliada"><button class="x" id="lx" aria-label="Cerrar">✕</button><button class="p" id="lp" aria-label="Anterior">‹</button><img id="li" alt=""><button class="n" id="ln" aria-label="Siguiente">›</button><div class="c" id="lc"></div></div>
+<script>
+const ITEMS=[[16,"corporativo",1.5],[202,"corporativo",1.532],[200,"corporativo",1.5],[203,"corporativo",1.501],[15,"corporativo",1.462],[17,"corporativo",1.5],[10,"corporativo",1.5],[201,"corporativo",1.5],[101,"corporativo",0.667],[105,"corporativo",1.5],[107,"corporativo",1.5],[2,"corporativo",1.5],[25,"corporativo",0.667],[26,"corporativo",0.667],[30,"corporativo",1.5],[32,"corporativo",1.5],[78,"colegios",1.5],[79,"colegios",1.5],[85,"colegios",1.391],[88,"colegios",1.5],[87,"colegios",0.667],[86,"colegios",1.5],[81,"colegios",1.272],[83,"colegios",0.751],[56,"promociones",0.667],[55,"promociones",0.667],[57,"promociones",0.667],[51,"promociones",1.5],[49,"promociones",0.667],[63,"promociones",0.667],[58,"promociones",1.5],[59,"promociones",1.5],[60,"promociones",1.5],[61,"promociones",0.667],[62,"promociones",0.667],[64,"promociones",1.5],[65,"promociones",1.5],[4,"cumpleanos",1.5],[9,"cumpleanos",1.5],[104,"cumpleanos",0.667],[91,"cumpleanos",1.321],[92,"cumpleanos",1.5],[18,"babyshower",1.401],[5,"babyshower",1.5],[6,"babyshower",0.68],[7,"babyshower",1.625],[8,"babyshower",1.625],[11,"babyshower",0.815],[12,"babyshower",1.5],[13,"babyshower",0.739],[14,"babyshower",0.832],[36,"eventos",1.5],[38,"eventos",1.5],[39,"eventos",1.5],[40,"eventos",1.351],[41,"eventos",1.5],[42,"eventos",1.387],[43,"eventos",0.667],[44,"eventos",0.667],[3,"eventos",1.5],[106,"eventos",1.5],[19,"eventos",1.604],[1,"musica",1.5],[24,"musica",0.667],[27,"musica",1.5],[33,"musica",0.667],[34,"musica",0.667],[37,"musica",0.667],[20,"musica",1.5],[21,"musica",1.5],[22,"musica",1.5],[23,"musica",1.452],[35,"musica",0.704],[0,"musica",0.667],[28,"musica",1.5],[29,"musica",0.662],[31,"musica",1.51],[45,"retratos",0.667],[46,"retratos",0.667],[47,"retratos",0.667],[48,"retratos",1.5],[93,"retratos",0.667],[94,"retratos",1.5],[95,"retratos",0.667],[100,"retratos",1.5],[102,"retratos",0.667],[103,"retratos",0.667],[72,"modelaje",0.775],[71,"modelaje",0.667],[70,"modelaje",0.667],[73,"modelaje",0.667],[67,"modelaje",0.667],[69,"modelaje",0.667],[68,"modelaje",1.5],[96,"modelaje",0.667],[97,"modelaje",0.667],[98,"modelaje",1.5],[99,"modelaje",0.667],[66,"mascotas",0.651],[74,"negocios",0.667],[75,"negocios",0.707],[76,"negocios",0.667],[77,"negocios",0.667],[80,"negocios",0.667],[82,"negocios",0.667],[84,"negocios",0.667],[89,"negocios",0.732],[90,"negocios",0.667],[50,"inmobiliaria",1.5],[52,"inmobiliaria",1.5],[53,"inmobiliaria",1.5],[54,"inmobiliaria",0.667]],CATS=[["corporativo", "Corporativo", 16], ["colegios", "Colegios y deportes", 8], ["promociones", "Promociones", 13], ["cumpleanos", "Cumpleaños", 5], ["babyshower", "Baby shower", 9], ["eventos", "Eventos y ferias", 11], ["musica", "Conciertos y shows", 15], ["retratos", "Retratos y parejas", 10], ["modelaje", "Modelaje", 11], ["mascotas", "Mascotas", 1], ["negocios", "Negocios y marcas", 9], ["inmobiliaria", "Inmobiliaria", 4]];
+const name=Object.fromEntries(CATS.map(c=>[c[0],c[1]]));
+const grid=document.getElementById('grid'),chips=document.getElementById('chips');
+let cur='all',vis=[];
+function mk(){grid.innerHTML=ITEMS.map((it,k)=>`<button class="it" data-k="${k}" data-c="${it[1]}" style="aspect-ratio:${it[2]}"><img loading="lazy" src="img/t${it[0]}.jpg" alt="Foto de ${name[it[1]]}"><span>${name[it[1]]}</span></button>`).join('')}
+function bar(){const all=[['all','Todo',ITEMS.length],...CATS];chips.innerHTML=all.map(c=>`<button class="chip" data-c="${c[0]}" aria-pressed="${c[0]===cur}">${c[1]}<small>${c[2]}</small></button>`).join('')}
+function filt(){vis=[];grid.querySelectorAll('.it').forEach(b=>{const s=cur==='all'||b.dataset.c===cur;b.hidden=!s;if(s)vis.push(+b.dataset.k)})}
+chips.onclick=e=>{const b=e.target.closest('.chip');if(!b)return;cur=b.dataset.c;bar();filt()};
+const lb=document.getElementById('lb'),li=document.getElementById('li'),lc=document.getElementById('lc');let pos=0;
+function show(p){pos=(p+vis.length)%vis.length;const it=ITEMS[vis[pos]];li.src='img/f'+it[0]+'.jpg';li.alt=name[it[1]];lc.textContent=name[it[1]]+' · '+(pos+1)+' / '+vis.length}
+grid.onclick=e=>{const b=e.target.closest('.it');if(!b)return;pos=vis.indexOf(+b.dataset.k);lb.hidden=false;show(pos)};
+document.getElementById('lx').onclick=()=>lb.hidden=true;
+document.getElementById('lp').onclick=()=>show(pos-1);
+document.getElementById('ln').onclick=()=>show(pos+1);
+lb.onclick=e=>{if(e.target===lb)lb.hidden=true};
+document.onkeydown=e=>{if(lb.hidden)return;if(e.key==='Escape')lb.hidden=true;if(e.key==='ArrowLeft')show(pos-1);if(e.key==='ArrowRight')show(pos+1)};
+mk();bar();filt();
+</script>
