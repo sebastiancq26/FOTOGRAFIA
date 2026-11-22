@@ -136,7 +136,7 @@ function bar(){const all=[['all','Todo',ITEMS.length],...CATS];chips.innerHTML=a
 function filt(){vis=[];grid.querySelectorAll('.it').forEach(b=>{const s=cur==='all'||b.dataset.c===cur;b.hidden=!s;if(s)vis.push(+b.dataset.k)})}
 chips.onclick=e=>{const b=e.target.closest('.chip');if(!b)return;cur=b.dataset.c;bar();filt()};
 const lb=document.getElementById('lb'),li=document.getElementById('li'),lc=document.getElementById('lc');let pos=0;
-function show(p){pos=(p+vis.length)%vis.length;const it=ITEMS[vis[pos]];li.src='img/f'+it[0]+'.jpg';li.alt=name[it[1]];lc.textContent=name[it[1]]+(it[3]?' · imagen de referencia':'')+' · '+(pos+1)+' / '+vis.length}
+function show(p){pos=(p+vis.length)%vis.length;const it=ITEMS[vis[pos]];li.src='img/f'+it[0]+'.jpg';li.alt=name[it[1]];lc.textContent=name[it[1]]+(it[3]?' · referencia':'')+' · '+(pos+1)+' / '+vis.length}
 grid.onclick=e=>{const b=e.target.closest('.it');if(!b)return;pos=vis.indexOf(+b.dataset.k);lb.hidden=false;show(pos)};
 document.getElementById('lx').onclick=()=>lb.hidden=true;
 document.getElementById('lp').onclick=()=>show(pos-1);
