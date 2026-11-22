@@ -106,7 +106,7 @@ footer{color:var(--mute);font-size:14px;padding:0 0 40px;display:flex;justify-co
 </header>
 <section class="sec" id="galeria"><div class="eye">Portafolio</div><h2>Trabajos reales, por categoría</h2>
 <p class="sub">Elige el tipo de servicio y mira cómo trabajamos. Toca cualquier foto para verla en grande.</p>
-<div class="chips" id="chips"></div><div class="grid" id="grid"></div><p style="margin:18px 0 0;font-size:13px;color:var(--mute);text-align:center">Las fotos marcadas como «referencia» son imágenes de banco usadas como ejemplo de estilo.</p></section>
+<div class="chips" id="chips"></div><div class="grid" id="grid"></div></section>
 <section class="sec" id="servicios"><div class="eye">Servicios</div><h2>Fotógrafo y filmmaker</h2>
 <p class="sub">Fotografía y grabación en un solo servicio. Cubrimos cualquier evento y trabajamos con total profesionalismo.</p>
 <div class="two">
@@ -131,12 +131,12 @@ const ITEMS=[[16,"corporativo",1.5],[202,"corporativo",1.532],[200,"corporativo"
 const name=Object.fromEntries(CATS.map(c=>[c[0],c[1]]));
 const grid=document.getElementById('grid'),chips=document.getElementById('chips');
 let cur='all',vis=[];
-function mk(){grid.innerHTML=ITEMS.map((it,k)=>`<button class="it" data-k="${k}" data-c="${it[1]}" style="aspect-ratio:${it[2]}"><img loading="lazy" src="img/t${it[0]}.jpg" alt="Foto de ${name[it[1]]}"><span class="${it[3]?'ref':''}">${name[it[1]]}${it[3]?' · referencia':''}</span></button>`).join('')}
+function mk(){grid.innerHTML=ITEMS.map((it,k)=>`<button class="it" data-k="${k}" data-c="${it[1]}" style="aspect-ratio:${it[2]}"><img loading="lazy" src="img/t${it[0]}.jpg" alt="Foto de ${name[it[1]]}"><span>${name[it[1]]}</span></button>`).join('')}
 function bar(){const all=[['all','Todo',ITEMS.length],...CATS];chips.innerHTML=all.map(c=>`<button class="chip" data-c="${c[0]}" aria-pressed="${c[0]===cur}">${c[1]}<small>${c[2]}</small></button>`).join('')}
 function filt(){vis=[];grid.querySelectorAll('.it').forEach(b=>{const s=cur==='all'||b.dataset.c===cur;b.hidden=!s;if(s)vis.push(+b.dataset.k)})}
 chips.onclick=e=>{const b=e.target.closest('.chip');if(!b)return;cur=b.dataset.c;bar();filt()};
 const lb=document.getElementById('lb'),li=document.getElementById('li'),lc=document.getElementById('lc');let pos=0;
-function show(p){pos=(p+vis.length)%vis.length;const it=ITEMS[vis[pos]];li.src='img/f'+it[0]+'.jpg';li.alt=name[it[1]];lc.textContent=name[it[1]]+(it[3]?' · referencia':'')+' · '+(pos+1)+' / '+vis.length}
+function show(p){pos=(p+vis.length)%vis.length;const it=ITEMS[vis[pos]];li.src='img/f'+it[0]+'.jpg';li.alt=name[it[1]];lc.textContent=name[it[1]]+''+' · '+(pos+1)+' / '+vis.length}
 grid.onclick=e=>{const b=e.target.closest('.it');if(!b)return;pos=vis.indexOf(+b.dataset.k);lb.hidden=false;show(pos)};
 document.getElementById('lx').onclick=()=>lb.hidden=true;
 document.getElementById('lp').onclick=()=>show(pos-1);
